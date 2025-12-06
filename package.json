@@ -13,6 +13,7 @@
 		"publish": true
 	},
 	"dependencies": {
+		"@fingerprintjs/fingerprintjs-pro-react": "^2.7.1",
 		"nanoid": "5.1.6",
 		"partyserver": "0.0.75",
 		"partysocket": "1.1.6",

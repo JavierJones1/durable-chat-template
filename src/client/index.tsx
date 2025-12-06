@@ -9,6 +9,10 @@ import {
 	useParams,
 } from "react-router";
 import { nanoid } from "nanoid";
+import {
+  FpjsProvider,
+  FingerprintJSPro
+} from '@fingerprintjs/fingerprintjs-pro-react'
 
 import { names, type ChatMessage, type Message } from "../shared";
 
@@ -129,3 +133,25 @@ createRoot(document.getElementById("root")!).render(
 		</Routes>
 	</BrowserRouter>,
 );
+
+// @ts-ignore
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <FpjsProvider
+      loadOptions={{
+        apiKey: "vCJZtgdUtECFJOyc2RP2",
+        endpoint: [
+          "https://getase.tech/LOCVxhWH2CZqa4wg/dn3lJAjd2qsAxtSL?region=eu",
+          FingerprintJSPro.defaultEndpoint
+        ],
+        scriptUrlPattern: [
+          "https://getase.tech/LOCVxhWH2CZqa4wg/b7Rj5lKj18mDLKgG?apiKey=<apiKey>&version=<version>&loaderVersion=<loaderVersion>",
+          FingerprintJSPro.defaultScriptUrlPattern
+        ],
+        region: "eu"
+      }}
+    >
+      <App />
+    </FpjsProvider>
+  </React.StrictMode>
+)
